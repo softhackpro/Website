@@ -69,7 +69,7 @@
 //     </>
 //   );
 // }
-import HowItWorksLayout from "../layouts/HowItWorksLayout";
+import HowItWorksLayout from '../layouts/HowItWorksLayout';
 import Reveal from "../components/Reveal";
 import SectionHead from "../components/SectionHead";
 import { Frame } from "../components/Frame";

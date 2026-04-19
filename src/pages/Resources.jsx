@@ -70,7 +70,7 @@
 import { Link } from 'react-router-dom';
 import Reveal from '../components/Reveal';
 import SectionHead from '../components/SectionHead';
-import BlogLayout from '../components/BlogLayout';
+import ResourcesLayout from '../layouts/ResourcesLayout';
 
 const PILLARS = [
   ['Manifesto', 'The Autonomous Revenue Manifesto', '/manifesto'],
@@ -119,7 +119,7 @@ function ResourceItem({ type, title, to }) {
 
 export default function Resources() {
   return (
-    <BlogLayout>
+    <ResourcesLayout>
       <header className="page-hero">
         <div className="site-container">
           <div className="eyebrow">Resources</div>
@@ -174,6 +174,6 @@ export default function Resources() {
           </Reveal>
         </div>
       </section>
-    </BlogLayout>
+    </ResourcesLayout>
   );
 }

@@ -1,9 +1,9 @@
 import { useEffect } from "react";
 
-export default function AboutLayout({ children }) {
+export default function CompareLayout({ children }) {
   useEffect(() => {
     // Basic SEO meta tags
-    document.title = "Autonomous Revenue Infrastructure.";
+    document.title = "What Makes This Infrastructure. Not Another Tool.";
 
     const setMetaTag = (name, content) => {
       let element = document.querySelector(`meta[name="${name}"]`);
@@ -28,25 +28,25 @@ export default function AboutLayout({ children }) {
     // Description
     setMetaTag(
       "description",
-      "PravRaha helps B2B Companies generate pipeline by detecting buying signals, researching accounts, identifying decision makers and executing personalized outreach campaigns."
+      "PravRaha vs Apollo, ZoomInfo, Outreach, Salesloft, 11x, Artisan, Clay, and lead-gen agencies — compared across data freshness, signal orchestration, execution model, feedback loops, and what you actually buy."
     );
 
     // Open Graph
-    setPropertyTag("og:title", "Autonomous Revenue Infrastructure.");
+    setPropertyTag("og:title", "What Makes This Infrastructure. Not Another Tool.");
     setPropertyTag(
       "og:description",
-      "PravRaha helps B2B Companies generate pipeline by detecting buying signals, researching accounts, identifying decision makers and executing personalized outreach campaigns."
+      "PravRaha vs Apollo, ZoomInfo, Outreach, Salesloft, 11x, Artisan, Clay, and lead-gen agencies — compared across data freshness, signal orchestration, execution model, feedback loops, and what you actually buy."
     );
-    setPropertyTag("og:image", "/ab_logo.jpeg");
+    setPropertyTag("og:image", "/og-compare.png");
 
     // Twitter
     setMetaTag("twitter:card", "summary_large_image");
-    setMetaTag("twitter:title", "Autonomous Revenue Infrastructure.");
+    setMetaTag("twitter:title", "What Makes This Infrastructure. Not Another Tool.");
     setMetaTag(
       "twitter:description",
-      "PravRaha helps B2B Companies generate pipeline by detecting buying signals, researching accounts, identifying decision makers and executing personalized outreach campaigns."
+      "PravRaha vs Apollo, ZoomInfo, Outreach, Salesloft, 11x, Artisan, Clay, and lead-gen agencies — compared across data freshness, signal orchestration, execution model, feedback loops, and what you actually buy."
     );
-    setMetaTag("twitter:image", "/ab_logo.jpeg");
+    setMetaTag("twitter:image", "/og-compare.png");
 
   }, []);
 

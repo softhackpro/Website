@@ -271,7 +271,7 @@
 //   );
 // }
 
-import AboutLayout from "../components/AboutLayout";
+import AboutLayout from "../layouts/AboutLayout";
 import Reveal from '../components/Reveal';
 import SectionHead from '../components/SectionHead';
 

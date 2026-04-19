@@ -192,7 +192,7 @@
 import React from "react";
 import { Target, Users, Bot, BarChart3 } from "lucide-react";
 import { motion } from "framer-motion";
-import B2BLeadGenerationLayout from "../components/B2BLeadGenerationLayout";
+import ServicesLayout from "../layouts/ServicesLayout";
 
 const features = [
   {
@@ -245,7 +245,7 @@ const scrollToContact = () => {
 
 export default function Services() {
   return (
-    <B2BLeadGenerationLayout>
+    <ServicesLayout>
       <div className="bg-bg text-text">
 
         {/* HERO */}
@@ -372,6 +372,6 @@ export default function Services() {
         </section>
 
       </div>
-    </B2BLeadGenerationLayout>
+    </ServicesLayout>
   );
 }

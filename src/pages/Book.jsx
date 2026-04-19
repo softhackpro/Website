@@ -484,7 +484,7 @@
 import Reveal from '../components/Reveal';
 import { useState } from 'react';
 import axios from 'axios';
-import ContactLayout from './ContactLayout'; // ✅ FIX ADDED
+import ContactLayout from '../layouts/ContactLayout'; // ✅ FIXED PATH
 
 const TOOLS = ['Apollo','ZoomInfo','Outreach','Salesloft','Clay','11x / Artisan','HubSpot','Salesforce','Other'];
 
@@ -693,3 +693,91 @@ export default function Book() {
     </ContactLayout>
   );
 }
+// import Reveal from '../components/Reveal';
+// import { useState } from 'react';
+// import axios from 'axios';
+// import ContactLayout from '../layouts/ContactLayout'; // ✅ FIXED PATH
+
+// const TOOLS = ['Apollo','ZoomInfo','Outreach','Salesloft','Clay','11x / Artisan','HubSpot','Salesforce','Other'];
+
+// export default function Book() {
+//   const [formData, setFormData] = useState({
+//     name: '',
+//     email: '',
+//     company: '',
+//     role: '',
+//     tools: [],
+//     message: ''
+//   });
+
+//   const [loading, setLoading] = useState(false);
+
+//   const handleChange = (field, value) => {
+//     setFormData(prev => ({
+//       ...prev,
+//       [field]: value
+//     }));
+//   };
+
+//   const handleToolChange = (tool) => {
+//     setFormData(prev => ({
+//       ...prev,
+//       tools: prev.tools.includes(tool)
+//         ? prev.tools.filter(t => t !== tool)
+//         : [...prev.tools, tool]
+//     }));
+//   };
+
+//   const validateForm = () => {
+//     const { name, email, company, role, tools, message } = formData;
+
+//     if (!name.trim()) return 'Full name is required';
+//     if (!email.trim()) return 'Email is required';
+
+//     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+//     if (!emailRegex.test(email)) return 'Enter a valid email';
+
+//     if (!company.trim()) return 'Company is required';
+//     if (!role.trim()) return 'Role is required';
+//     if (tools.length === 0) return 'Select at least one tool';
+//     if (!message.trim()) return 'Message is required';
+
+//     return null;
+//   };
+
+//   const handleSubmit = async () => {
+//     const error = validateForm();
+//     if (error) return alert(error);
+
+//     try {
+//       setLoading(true);
+
+//       const res = await axios.post(
+//         'https://node.pravraha.com/landingpage/submit-query',
+//         formData,
+//         { headers: { 'Content-Type': 'application/json' } }
+//       );
+
+//       if (res.status >= 200 && res.status < 300) {
+//         alert('Request submitted successfully!');
+//         setFormData({
+//           name: '', email: '', company: '', role: '', tools: [], message: ''
+//         });
+//       } else {
+//         alert(res.data?.message || 'Something went wrong');
+//       }
+
+//     } catch (err) {
+//       console.error(err);
+//       alert(err.response?.data?.message || 'Server error. Try again.');
+//     } finally {
+//       setLoading(false);
+//     }
+//   };
+
+//   return (
+//     <ContactLayout>
+//       {/* your existing JSX unchanged */}
+//     </ContactLayout>
+//   );
+// }
