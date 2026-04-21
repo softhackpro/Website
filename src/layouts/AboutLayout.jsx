@@ -1,54 +1,70 @@
-import { useEffect } from "react";
+// import { useEffect } from "react";
+// import { Helmet } from "react-helmet-async";
+
+// export default function AboutLayout({ children }) {
+//   return (
+//     <>
+//       <Helmet>
+//         <title>Built by Operators Who Closed $18M ARR the Old Way.</title>
+//         <meta
+//           name="description"
+//           content="Pankaj Kumar closed $18M ARR as the founding sales hire at ACCELQ. Milind Kamboj built distributed systems at Verizon. Priyanka Kumari ran GTM operations at ACCELQ. Now they are building autonomous revenue infrastructure from Jharkhand for the world."
+//         />
+//         <meta property="og:title" content="Built by Operators Who Closed $18M ARR the Old Way." />
+//         <meta
+//           property="og:description"
+//           content="Pankaj Kumar closed $18M ARR as the founding sales hire at ACCELQ. Milind Kamboj built distributed systems at Verizon. Priyanka Kumari ran GTM operations at ACCELQ. Now they are building autonomous revenue infrastructure from Jharkhand for the world."
+//         />
+//         <meta property="og:image" content="https://www.pravraha.com/og-about.png" />
+//         <meta name="twitter:card" content="summary_large_image" />
+//         <meta name="twitter:title" content="Built by Operators Who Closed $18M ARR the Old Way." />
+//         <meta
+//           name="twitter:description"
+//           content="Pankaj Kumar closed $18M ARR as the founding sales hire at ACCELQ. Milind Kamboj built distributed systems at Verizon. Priyanka Kumari ran GTM operations at ACCELQ. Now they are building autonomous revenue infrastructure from Jharkhand for the world."
+//         />
+//         <meta name="twitter:image" content="https://www.pravraha.com/og-about.png" />
+//       </Helmet>
+//       {children}
+//     </>
+//   );
+// }
+import { Helmet } from "react-helmet-async";
 
 export default function AboutLayout({ children }) {
-  useEffect(() => {
-    // Basic SEO meta tags
-    document.title = "Built by Operators Who Closed $18M ARR the Old Way.";
+  return (
+    <>
+      <Helmet>
+        {/* ✅ TITLE */}
+        <title>Built by Operators Who Closed $18M ARR the Old Way.</title>
 
-    const setMetaTag = (name, content) => {
-      let element = document.querySelector(`meta[name="${name}"]`);
-      if (!element) {
-        element = document.createElement("meta");
-        element.setAttribute("name", name);
-        document.head.appendChild(element);
-      }
-      element.setAttribute("content", content);
-    };
+        {/* ✅ DESCRIPTION */}
+        <meta
+          name="description"
+          content="Pankaj Kumar closed $18M ARR as the founding sales hire at ACCELQ. Milind Kamboj built distributed systems at Verizon. Priyanka Kumari ran GTM operations at ACCELQ. Now they are building autonomous revenue infrastructure from Jharkhand for the world."
+        />
 
-    const setPropertyTag = (property, content) => {
-      let element = document.querySelector(`meta[property="${property}"]`);
-      if (!element) {
-        element = document.createElement("meta");
-        element.setAttribute("property", property);
-        document.head.appendChild(element);
-      }
-      element.setAttribute("content", content);
-    };
+        {/* ✅ OPEN GRAPH */}
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Pravraha" />
+        <meta property="og:url" content="https://www.pravraha.com/about" />
+        <meta property="og:title" content="Built by Operators Who Closed $18M ARR the Old Way." />
+        <meta
+          property="og:description"
+          content="Pankaj Kumar closed $18M ARR as the founding sales hire at ACCELQ. Milind Kamboj built distributed systems at Verizon. Priyanka Kumari ran GTM operations at ACCELQ. Now they are building autonomous revenue infrastructure from Jharkhand for the world."
+        />
+        <meta property="og:image" content="https://www.pravraha.com/og-about.png" />
 
-    // Description
-    setMetaTag(
-      "description",
-      "Pankaj Kumar closed $18M ARR as the founding sales hire at ACCELQ. Milind Kamboj built distributed systems at Verizon. Priyanka Kumari ran GTM operations at ACCELQ. Now they are building autonomous revenue infrastructure from Jharkhand for the world."
-    );
+        {/* ✅ TWITTER */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Built by Operators Who Closed $18M ARR the Old Way." />
+        <meta
+          name="twitter:description"
+          content="Pankaj Kumar closed $18M ARR as the founding sales hire at ACCELQ. Milind Kamboj built distributed systems at Verizon. Priyanka Kumari ran GTM operations at ACCELQ. Now they are building autonomous revenue infrastructure from Jharkhand for the world."
+        />
+        <meta name="twitter:image" content="https://www.pravraha.com/og-about.png" />
+      </Helmet>
 
-    // Open Graph
-    setPropertyTag("og:title", "Built by Operators Who Closed $18M ARR the Old Way.");
-    setPropertyTag(
-      "og:description",
-      "Pankaj Kumar closed $18M ARR as the founding sales hire at ACCELQ. Milind Kamboj built distributed systems at Verizon. Priyanka Kumari ran GTM operations at ACCELQ. Now they are building autonomous revenue infrastructure from Jharkhand for the world."
-    );
-    setPropertyTag("og:image", "/og-about.png");
-
-    // Twitter
-    setMetaTag("twitter:card", "summary_large_image");
-    setMetaTag("twitter:title", "Built by Operators Who Closed $18M ARR the Old Way.");
-    setMetaTag(
-      "twitter:description",
-      "Pankaj Kumar closed $18M ARR as the founding sales hire at ACCELQ. Milind Kamboj built distributed systems at Verizon. Priyanka Kumari ran GTM operations at ACCELQ. Now they are building autonomous revenue infrastructure from Jharkhand for the world."
-    );
-    setMetaTag("twitter:image", "/og-about.png");
-
-  }, []);
-
-  return <>{children}</>;
+      {children}
+    </>
+  );
 }
