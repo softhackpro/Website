@@ -546,7 +546,7 @@ export default function Book() {
       setLoading(true);
 
       const res = await axios.post(
-        'https://node.pravraha.com/landingpage/submit-query',
+        'https://node.encleadus.cloud/lead/submit-query',
         formData,
         {
           headers: {
